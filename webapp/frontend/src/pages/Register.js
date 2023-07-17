@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  // const [registered, setRegistered] = useState(false)
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.user.isLoading);
   const error = useSelector((state) => state.user.error);
@@ -37,6 +38,7 @@ const Register = () => {
     dispatch(
       registerUser({ email, first_name, last_name, password, re_password })
     );
+    // setRegistered(true)
   };
 
   useEffect(() => {

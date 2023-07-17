@@ -136,6 +136,29 @@ export const reset_password_confirm = createAsyncThunk(
   }
 );
 
+// Async thunk action for user registration
+export const verify = createAsyncThunk(
+  "user/verify",
+  async ({ uid, token }) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const body = JSON.stringify({ uid, token });
+    try {
+      await axios.post(
+        `http://127.0.0.1:8000/auth/users/activation/`,
+        body,
+        config
+      );
+      // return response.data;
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  }
+);
+
 // Async thunk action for user login
 export const loginUser = createAsyncThunk(
   "user/login",

@@ -1,0 +1,10 @@
+webapp/backend/__pycache__/
+webapp/backend/pyEnv/
+webapp/backend/accounts/__pycache__/
+webapp/backend/accounts/migrations/
+webapp/backend/synergy/__pycache__/
+webapp/frontend/dummy/
+webapp/frontend/node_modules/
+config.py
+settings.py
+.env
